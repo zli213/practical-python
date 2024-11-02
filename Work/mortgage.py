@@ -22,4 +22,5 @@ while principal > 0:
         principal = 0
     print(totalMonth, round(total_paid, 2), round(principal, 2))
 
-print('Total paid:', round(total_paid, 2), ', month:', round(totalMonth))
+# print('Total paid:', round(total_paid, 2), ', month:', round(totalMonth))
+print(f'Total paid: ${total_paid:0.2f}, month: {totalMonth}')
