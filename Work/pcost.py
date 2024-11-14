@@ -10,6 +10,8 @@
 # print(f'Total cost {sum}')
 ######
 import gzip
+import sys
+
 # with gzip.open('Data/portfolio.csv.gz', 'rt') as f:
 #     next(f)
 #     sum = 0
@@ -37,5 +39,11 @@ def portfolio_cost(filename):
 
 
 # cost = portfolio_cost('Data/portfolio.csv')
-cost = portfolio_cost('Data/missing.csv')
+# cost = portfolio_cost('Data/missing.csv')
+if len(sys.argv) == 2:
+    filename = sys.argv[1]
+else:
+    filename = 'Data/portfolio.csv'
+
+cost = portfolio_cost(filename)
 print('Total cost:', cost)
