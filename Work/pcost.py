@@ -8,11 +8,26 @@
 #         row = line.split(',')
 #         sum += int(row[1]) * float(row[2])
 # print(f'Total cost {sum}')
+######
 import gzip
-with gzip.open('Data/portfolio.csv.gz', 'rt') as f:
-    next(f)
-    sum = 0
-    for line in f:
-        row = line.split(',')
-        sum += int(row[1]) * float(row[2])
-print(f'Total cost {sum}')
+# with gzip.open('Data/portfolio.csv.gz', 'rt') as f:
+#     next(f)
+#     sum = 0
+#     for line in f:
+#         row = line.split(',')
+#         sum += int(row[1]) * float(row[2])
+# print(f'Total cost {sum}')
+
+
+def portfolio_cost(filename):
+    with gzip.open(filename + '.gz', 'rt') as f:
+        next(f)
+        sum = 0
+        for line in f:
+            row = line.split(',')
+            sum += int(row[1]) * float(row[2])
+    return sum
+
+
+cost = portfolio_cost('Data/portfolio.csv')
+print('Total cost:', cost)
